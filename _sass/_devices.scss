@@ -1,0 +1,33 @@
+
+.device {
+  position: relative;
+  background-size: cover;
+}
+
+.device .app-screenshot {
+  position: absolute;
+  width: 240px;
+  height: auto;
+}
+
+.device.iphone-white {
+  width: 288px;
+  height: 608px;
+  background-image: url(../../images/iphone-white.png);
+}
+.device.iphone-white .app-screenshot {
+  top: 91px;
+  left: 25px;
+  width: 240px;
+}
+
+.device.iphone-black {
+  width: 288px;
+  height: 608px;
+  background-image: url(../../images/iphone-black.png);
+}
+.device.iphone-black .app-screenshot {
+  top: 91px;
+  left: 25px;
+  width: 240px;
+}

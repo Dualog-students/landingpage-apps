@@ -1,0 +1,43 @@
+<ul class="social-links">
+
+  {% if site.social-links.github %}
+  <li>
+    <a href="https://github.com/{{ site.social-links.github }}">
+      <i class="fa fa-github fa-lg"></i>
+    </a>
+  </li>
+  {% endif %} 
+  
+  {% if site.social-links.twitter %}
+  <li>
+    <a href="https://twitter.com/{{ site.social-links.twitter }}">
+      <i class="fa fa-twitter fa-lg"></i>
+    </a>
+  </li>
+  {% endif %} 
+  
+  {% if site.social-links.instagram %}
+  <li>
+    <a href="https://instagram.com/{{ site.social-links.instagram }}">
+      <i class="fa fa-instagram fa-lg"></i>
+    </a>
+  </li>
+  {% endif %} 
+  
+  {% if site.social-links.linkedin %}
+  <li>
+    <a href="https://www.linkedin.com/company/{{ site.social-links.linkedin }}">
+      <i class="fa fa-linkedin fa-lg"></i>
+    </a>
+  </li>
+  {% endif %} 
+  
+  {% if site.social-links.email %}
+  <li>
+    <a href="mailto:{{ site.social-links.email }}">
+      <i class="fa fa-envelope-o fa-lg"></i>
+    </a>
+  </li>
+  {% endif %}
+  
+</ul>

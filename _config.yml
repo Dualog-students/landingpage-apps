@@ -1,0 +1,44 @@
+# Site Info
+title: Dualog Admin app
+url: https://github.com/dualog/
+
+# Display app icon on site
+enable:
+  app_icon: true
+
+# Device (options: iphone-black, iphone-white)
+device: iphone-white
+
+app:
+  name: Dualog Admin
+  ios_id: 1322916600 # https://itunes.apple.com/us/app/dualog-admin/id1322916600
+  android_id: com.dualog.admin # https://play.google.com/store/apps/details?id=com.dualog.admin
+
+# Marketing
+marketing_header: Ease of administration
+marketing_desc: The Dualog Admin app is the enterprise mobility app that allows Dualog® Connection Suite™ administrative functions to be performed in a convenient, modern and safe manner.
+
+google_analytics: # Optional
+itunes_affiliate_token: # Optional
+
+social-links:
+  github: dualog
+  twitter: Dualog_News
+  instagram: dualog
+  linkedin: dualog-as
+  email: sales@dualog.com
+
+# Developer stuff
+link_color: 
+social_link_color: black; 
+background_color: "#f5f5f5"
+download_button_text_color: white;
+download_button_background_color: "#02405a"
+
+version: v1.0
+sass:
+  style: :compressed
+
+exclude:
+  - README.md
+  - LICENSE

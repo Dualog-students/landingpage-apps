@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-us">
+{% include head.html %}
+  <body>
+
+    {{ content }}
+
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+    {% if site.google_analytics %}
+    <script>
+      window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+      ga('create','{{ site.google_analytics }}','auto'); ga('send','pageview')
+    </script>
+    
+    <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+    <script>
+      $(function() 
+      {
+        $('body').on('click', 'a', function(e) 
+        {
+          var url = $(this).attr('href');
+          if (url) 
+          {
+            console.log("GA event sent");
+            ga('send', 'event', 'link', 'click', url);
+          }
+        });
+      });
+    </script>
+    {% endif %}
+    
+    <!-- Fetch data from iTunes if there is an itunes app id in config -->
+    {% if site.app.ios_id %}
+    <script>
+      $(function() {
+        var url = 'https://itunes.apple.com/lookup?id={{ site.app.ios_id }}&callback=?';
+        $.getJSON(url, function(res) 
+        {
+          if (res.results && res.results.length) 
+          {
+
+            var jsonPayload = res.results[0];
+            
+            // App Icon
+            var $iconElement = $('.app-icon');
+            if ($iconElement && !$iconElement.attr('src') && jsonPayload.artworkUrl512) 
+            {
+              $iconElement.attr('src', jsonPayload.artworkUrl512);
+            }
+
+            // App Screenshot
+            var $screenshotElement = $('.app-screenshot');
+            if ($screenshotElement && !$screenshotElement.attr('src') && jsonPayload.screenshotUrls && jsonPayload.screenshotUrls.length) 
+            {
+              $screenshotElement.attr('src', jsonPayload.screenshotUrls[0]);
+            }
+          } 
+        });
+      });
+    </script>
+    {% endif %}
+
+  </body>
+</html>
